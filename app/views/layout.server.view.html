@@ -45,8 +45,9 @@
 
 <body class="ng-cloak">
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+	<div ng-include src=" '/modules/core/views/sidebar.client.view.html' " include-replace></div>
 	<section class="content">
-		<section class="container">
+		<section class="container page-container">
 			{% block content %}{% endblock %}
 		</section>
 	</section>

@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/noteshare-test',
+	db: 'mongodb://localhost/cmcwebapp-test',
 	port: 3001,
 	app: {
-		title: 'NoteShare - Test Environment'
+		title: 'CMCWebApp - Test Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',

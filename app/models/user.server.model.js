@@ -62,6 +62,10 @@ var UserSchema = new Schema({
 	salt: {
 		type: String
 	},
+	stripeCustomerId: {
+		type: String,
+		default: ''
+	},
 	provider: {
 		type: String,
 		required: 'Provider is required'
@@ -71,9 +75,9 @@ var UserSchema = new Schema({
 	roles: {
 		type: [{
 			type: String,
-			enum: ['user', 'admin']
+			enum: ['user', 'admin', 'vip', 'prestige', 'editor']
 		}],
-		default: ['user']
+		required: 'Role is required'
 	},
 	updated: {
 		type: Date

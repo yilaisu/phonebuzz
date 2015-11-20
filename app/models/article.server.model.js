@@ -28,6 +28,37 @@ var ArticleSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	link: {
+		type: String,
+		required: 'Link cannot be blank'
+	},
+	price: {
+		type: Number,
+		default: '0'
+	},
+	totalTickets: {
+		type: Number,
+		required: 'Total tickets cannot be blank'
+	},
+	soldTickers: {
+		type: Number,
+		default: '0'
+	},
+	imageLink: {
+		type: String,
+		required: 'Image link cannot be empty'
+	},
+	eventDate: {
+		type: Date,
+		required: 'Event date cannot be empty'
+	},
+	location: {
+		type: String,
+		required: 'Location cannot be empty'
+	},
+	fontColor: {
+		type: String
 	}
 });
 

@@ -2,8 +2,8 @@
 
 module.exports = {
 	app: {
-		title: 'NoteShare',
-		description: 'Application to upload, share, and discuss class notes',
+		title: 'CMCWebApp',
+		description: 'Application to create, post, and purchase event tickets',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
 	port: process.env.PORT || 3000,
@@ -15,6 +15,7 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+				'public/lib/jquery.scrollbar/jquery.scrollbar.css'
 			],
 			js: [
 				'public/lib/angular/angular.js',
@@ -25,7 +26,9 @@ module.exports = {
 				'public/lib/angular-sanitize/angular-sanitize.js', 
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
-				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js'
+				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+				'public/lib/jquery/dist/jquery.min.js',
+				'public/lib/jquery.scrollbar/jquery.scrollbar.min.js'
 			]
 		},
 		css: [

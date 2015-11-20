@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/noteshare-dev',
+	db: 'mongodb://localhost/cmcwebapp-dev',
 	app: {
-		title: 'NoteShare - Development Environment'
+		title: 'CMCWebApp - Development Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
