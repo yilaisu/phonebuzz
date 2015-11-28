@@ -44,13 +44,28 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<div ng-include src=" '/modules/core/views/sidebar.client.view.html' " include-replace></div>
-	<section class="content">
-		<section class="container page-container">
-			{% block content %}{% endblock %}
-		</section>
-	</section>
+	<div class="page-container">
+		 <!-- START PAGE HEADER WRAPPER -->
+	    <div ng-include=" 'tpl/blocks/header.html' ">
+	    </div>
+	    <!-- END PAGE HEADER WRAPPER -->
+	    <!-- START PAGE CONTENT WRAPPER -->
+	    <div class="page-content-wrapper">
+	        <!-- START PAGE CONTENT -->
+	        <div class="content">
+	            <section class="container page-container">
+					{% block content %}{% endblock %}
+				</section>
+	        </div>
+	        <!-- END PAGE CONTENT -->
+	        <div ng-include=" 'tpl/blocks/footer.html'">
+	        </div>
+	    </div>
+	    <!-- END PAGE CONTENT WRAPPER -->
+	</div>
+
+	<header style="z-index: 0;" data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 
 	<!--Embedding The User Object-->
 	<script type="text/javascript">
