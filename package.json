@@ -71,11 +71,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/utorontocmc/CMCWebApp.git"
+    "url": "git+https://github.com/yilaisu/phonebuzz.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/utorontocmc/CMCWebApp/issues"
+    "url": "https://github.com/yilaisu/phonebuzz/issues"
   },
-  "homepage": "https://github.com/utorontocmc/CMCWebApp#readme"
+  "homepage": "https://github.com/yilaisu/phonebuzz#readme"
 }
