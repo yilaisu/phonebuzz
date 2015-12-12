@@ -19,7 +19,7 @@ angular.module('users').controller('PhoneBuzzController', ['$scope', '$http', '$
 				callInfo.to = record.to;
 				callInfo.saveRecord = true;
 
-				$scope.homePageMessage = "Call Submited";
+				$scope.submitMessage = "Call Submited";
 				console.log(callInfo);
 
 				$http.post('/phaseThree', callInfo).success(function(response) {
@@ -56,7 +56,7 @@ angular.module('users').controller('PhoneBuzzController', ['$scope', '$http', '$
 					callInfo.saveRecord = true;
 				}
 
-				$scope.homePageMessage = "Call Submited";
+				$scope.submitMessage = "Call Submited";
 				console.log(info);
 
 				$http.post('/phaseThree', callInfo).success(function(response) {
