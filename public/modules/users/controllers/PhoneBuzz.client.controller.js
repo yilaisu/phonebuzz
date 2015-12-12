@@ -32,41 +32,49 @@ angular.module('users').controller('PhoneBuzzController', ['$scope', '$http', '$
 		};
 
 		$scope.storeCredentials = function() {
-			Caller.storeCallerInfo($scope.caller, function(info){
-				$scope.homePageMessage = "Information successfully updated";
-				console.log(info);
-				Caller.getCallerInfo(function(info2){
-					console.log(info2);
-				});
-            });
+			if($scope.caller && $scope.caller.from && $scope.caller.accountSID && $scope.caller.authToken){
+				Caller.storeCallerInfo($scope.caller, function(info){
+					$scope.homePageMessage = "Information successfully updated";
+					console.log(info);
+					Caller.getCallerInfo(function(info2){
+						console.log(info2);
+					});
+	            });
+			}else{
+				$scope.homePageMessage = "All three inputs are required!";
+			}
 		};
 
 		$scope.call = function(saveRecord) {
-			Caller.getCallerInfo(function(info){
-				var callInfo = {};
-				callInfo.from = info.from;
-				callInfo.accountSID = info.accountSID;
-				callInfo.authToken = info.authToken;
-				callInfo.to = $scope.credentials.to;
+			if($scope.credentials && $scope.credentials.to){
+				Caller.getCallerInfo(function(info){
+					var callInfo = {};
+					callInfo.from = info.from;
+					callInfo.accountSID = info.accountSID;
+					callInfo.authToken = info.authToken;
+					callInfo.to = $scope.credentials.to;
 
-				if( $scope.credentials.sec ){
-					callInfo.sec = $scope.credentials.sec;
-				}
-				if(saveRecord){
-					callInfo.saveRecord = true;
-				}
+					if( $scope.credentials.sec ){
+						callInfo.sec = $scope.credentials.sec;
+					}
+					if(saveRecord){
+						callInfo.saveRecord = true;
+					}
 
-				$scope.submitMessage = "Call Submited";
-				console.log(info);
+					$scope.submitMessage = "Call Submited";
+					console.log(info);
 
-				$http.post('/phaseThree', callInfo).success(function(response) {
-					console.log(response);
-					console.log("Done processing")
-					$scope.init();
-				}).error(function(response) {
-					$scope.error = response.err;
-				});
-            });
+					$http.post('/phaseThree', callInfo).success(function(response) {
+						console.log(response);
+						console.log("Done processing")
+						$scope.init();
+					}).error(function(response) {
+						$scope.error = response.err;
+					});
+	            });
+			}else{
+				$scope.submitMessage = "Number to call is required!";
+			}
 		};
 	}
 ]);
