@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/cmcwebapp-dev',
 	app: {
-		title: 'CMCWebApp - Development Environment'
+		title: 'LendUp - PhoneBuzz'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',

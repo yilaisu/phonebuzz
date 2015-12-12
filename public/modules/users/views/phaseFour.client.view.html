@@ -1,0 +1,45 @@
+<section class="row" data-ng-controller="PhoneBuzzController" data-ng-init="init()">
+	<h3 class="col-md-10 text-center">Dial a number with PhoneBuzz: now with call record!</h3>
+	<div class="col-xs-8 col-md-offset-2 col-md-6">
+		<form data-ng-submit="call(true)" class="signin form-horizontal" autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label for="to">Phone Number To Call</label>
+					<input type="text" id="to" name="to" class="form-control" data-ng-model="credentials.to" placeholder="Phone Number">
+				</div>
+				<div class="form-group">
+					<label for="Delay">Delay</label>
+					<input type="text" id="sec" name="sec" class="form-control" data-ng-model="credentials.sec" placeholder="Seconds">
+				</div>
+				<div class="text-center form-group">
+					<button type="submit" class="btn btn-large btn-primary">Call</button>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+
+	<div class="col-xs-8 col-md-offset-2 col-md-6">
+		<table class="table table-bordered " >
+			<thead>
+	        <tr>
+	            <th style="text-align:center">Time</th>
+	            <th style="text-align:center">Delay</th>
+	            <th style="text-align:center">To</th>
+	            <th></th>
+	        </tr>
+	        </thead>
+	        <tbody>
+		  	<tr ng-repeat="call in callRecords | orderBy:'time':true">
+			    <td align="center">{{ call.time }}</td>
+			    <td align="center">{{ call.delay }}  </td>
+			    <td align="center">{{ call.to }}  </td>
+			    <td><button class="btn btn-large btn-primary" ng-click="redial(call)">Redial</button></td>
+		    </tr>
+			</tbody>
+		</table>
+	</div>
+
+</section>
