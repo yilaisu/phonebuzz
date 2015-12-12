@@ -18,85 +18,20 @@ var mongoose = require('mongoose'),
 /*
 exports.validation = function(req,res){
 
-	console.log("HELLO WORK");
-
 	var body = '';
-
-	jsonfile.writeFile('debug_req_params.txt',req.params, function (err) {
-        ;
-	});
-
-	jsonfile.writeFile('debug_req_body.txt',req.body, function (err) {
-        ;
-	});
-
-	jsonfile.writeFile('debug_req_header.txt',req.headers, function (err) {
-        ;
-	});
-
-	jsonfile.writeFile('debug_req_baseUrl.txt',req.baseUrl, function (err) {
-        ;
-	});
-
-	fs.writeFile('debug_test.txt', 'TESTING IF THIS WORKS', function (err) {
-        ;
-	});
-
-	var express = twilio.validateExpressRequest(req, 'ccc3480511a631bd54c4942679d33ba0');
-
-	fs.writeFile('debug_valid.txt', express, function (err) {
-        ;
-	});
-
-	var requestedUrl = req.protocol + '://' + req.get('Host') + req.url;
-	fs.writeFile('debug_url.txt', requestedUrl, function (err) {
-        ;
-	});
-
-	var data = req.body;
-	var reqBody ＝ {};
-	data.forEach(function (item) {
-       reqbody = item;
-   	});
-	fs.writeFile('debug_bodyString.txt', reqBody, function (err) {
-        ;
-	});
-
-	if (twilio.validateExpressRequest(req, 'ccc3480511a631bd54c4942679d33ba0')) {
-        fs.writeFile('debug_valid.txt', 'ExpressValidWorkds', function (err) {
-        	;
-		});
-    }
 
 	    req.on('data', function (data) {
             body += data;
 
-            fs.writeFile('debug_body.txt', data, function (err) {
-            	;
-			});
-
         });
-
-        var header = req.headers['x-twilio-signature'];
-        fs.writeFile('debug_header.txt', header, function (err) {
-            ;
-		});
 
         req.on('end', function () {
 
             var POST = qs.parse(body);
 
-            fs.writeFile('debug_POST.txt', POST, function (err) {
-            	;
-			});
-
             //validate incoming request is from twilio using your auth token and the header from Twilio
             var token = 'ccc3480511a631bd54c4942679d33ba0',
                 header = req.headers['x-twilio-signature'];
-
-            fs.writeFile('debug_header.txt', header, function (err) {
-            	;
-			});
 
             //validateRequest returns true if the request originated from Twilio
             if (twilio.validateRequest(token, header, 'https://0d2ff84a.ngrok.io', POST)) {

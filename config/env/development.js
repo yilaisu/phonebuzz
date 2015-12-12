@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/cmcwebapp-dev',
+	db: 'mongodb://localhost/phonebuzz-dev',
 	app: {
 		title: 'LendUp - PhoneBuzz'
 	},

@@ -2,8 +2,8 @@
 
 module.exports = {
 	app: {
-		title: 'CMCWebApp',
-		description: 'Application to create, post, and purchase event tickets',
+		title: 'LendUp PhoneBuzz',
+		description: 'PhoneBuzz',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
 	port: process.env.PORT || 3000,
