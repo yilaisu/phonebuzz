@@ -114,7 +114,7 @@ exports.customOutNum = function(req, res) {
 	twilioClient.makeCall({
 	  to: toNum,
 	  from: fromNum,
-	  url: 'lendup.herokuapp.com/phaseOne'
+	  url: 'https://lendup.herokuapp.com/phaseOne'
 	}, function(err, call) {
 		;
 	});
