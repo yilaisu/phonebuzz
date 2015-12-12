@@ -17,9 +17,6 @@ module.exports = function(app) {
 	app.route('/phaseThree')
 		.post(phoneBuzz.saveCallRecord, phoneBuzz.delay, phoneBuzz.customOutNum);
 
-	app.route('/phaseFour')
-		.post(phoneBuzz.saveCallRecord, phoneBuzz.delay, phoneBuzz.customOutNum);
-
 	app.route('/callRecords')
 		.get(phoneBuzz.getCallRecords);
 };
